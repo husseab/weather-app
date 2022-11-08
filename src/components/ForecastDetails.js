@@ -24,14 +24,16 @@ function ForecastDetails({ forecast }) {
 export default ForecastDetails;
 
 ForecastDetails.propTypes = {
-  date: PropTypes.number.isRequired,
-  temperature: PropTypes.shape({
-    min: PropTypes.number,
-    max: PropTypes.number,
-  }).isRequired,
-  humidity: PropTypes.number.isRequired,
-  wind: PropTypes.shape({
-    speed: PropTypes.number,
-    direction: PropTypes.string,
+  forecast: PropTypes.shape({
+    date: PropTypes.number,
+    temperature: PropTypes.shape({
+      max: PropTypes.number,
+      min: PropTypes.number,
+    }),
+    humidity: PropTypes.number.isRequired,
+    wind: PropTypes.shape({
+      speed: PropTypes.number,
+      direction: PropTypes.string,
+    }).isRequired,
   }).isRequired,
 };
