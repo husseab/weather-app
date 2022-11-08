@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
@@ -26,6 +26,11 @@ App.propTypes = {
         max: PropTypes.number,
         min: PropTypes.number,
       }),
+      humidity: PropTypes.number.isRequired,
+      wind: PropTypes.shape({
+        speed: PropTypes.number,
+        direction: PropTypes.string,
+      }).isRequired,
     })
   ).isRequired,
   location: PropTypes.shape({
