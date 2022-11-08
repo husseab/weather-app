@@ -7,13 +7,12 @@ describe("ForecastSummary", () => {
   const validProps = {
     date: 1111111,
     description: "Stub description",
-    icon: "stubIcon",
+    icon: "800",
     temperature: {
       min: 12,
       max: 22,
     },
   };
-
   it("renders correctly", () => {
     const { asFragment } = render(
       <ForecastSummary
@@ -28,7 +27,7 @@ describe("ForecastSummary", () => {
   });
 
   it("renders correct values for props", () => {
-    const { getByText } = render(
+    const { getByText, getByTestId } = render(
       <ForecastSummary
         date={validProps.date}
         description={validProps.description}
@@ -37,15 +36,13 @@ describe("ForecastSummary", () => {
       />
     );
 
-    expect(getByText("1111111")).toHaveAttribute(
-      "class",
-      "forecast-summary__date"
-    );
+    expect(getByText("Thu Jan 01 1970")).toHaveClass("forecast-summary__date");
+
     expect(getByText("Stub description")).toHaveAttribute(
       "class",
       "forecast-summary__description"
     );
-    expect(getByText("stubIcon")).toHaveAttribute(
+    expect(getByTestId("forecast-icon")).toHaveAttribute(
       "class",
       "forecast-summary__icon"
     );
