@@ -8,12 +8,12 @@ function ForecastDetails({ forecast }) {
 
   return (
     <div className="forecast-details">
-      <div className="forecast-details_Date">{formattedDate}</div>
-      <div className="forecast-details__temperature_Max">
+      <div className="forecast-details_date">{formattedDate}</div>
+      <div className="forecast-details__temperature_max">
         Max temperature: {temperature.max}
         &deg;C
       </div>
-      <div className="forecast-details__temperature_Min">
+      <div className="forecast-details__temperature_min">
         Min temperature: {temperature.min}
         &deg;C
       </div>
