@@ -1,2 +1,5 @@
-.forecast-summary__icon {
-  }
+
+.forecast-summary__icon > .wi {
+    font-size: 80px;
+    padding: 50px;
+}
