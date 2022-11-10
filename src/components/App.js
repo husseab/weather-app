@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
@@ -10,7 +10,7 @@ function App({ forecasts, location }) {
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
-  const handleForecastSelect = useCallback((date) => setSelectedDate(date), []);
+  const handleForecastSelect = (date) => setSelectedDate(date);
 
   return (
     <div className="weather-app">
