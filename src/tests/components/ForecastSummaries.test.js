@@ -13,6 +13,7 @@ describe("ForecastSummaries", () => {
         max: 22,
         min: 12,
       },
+      onSelect: () => {},
     },
     {
       date: 2222222,
@@ -22,16 +23,25 @@ describe("ForecastSummaries", () => {
         max: 24,
         min: 13,
       },
+      onSelect: () => {},
     },
   ];
-
+  const onForecastSelect = jest.fn();
   it("renders correctly", () => {
-    const { asFragment } = render(<ForecastSummaries forecasts={validProps} />);
+    const { asFragment } = render(
+      <ForecastSummaries
+        forecasts={validProps}
+        onForecastSelect={onForecastSelect}
+      />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
   it("renders the correct number of ForecastSummary instances", () => {
     const { getAllByTestId } = render(
-      <ForecastSummaries forecasts={validProps} />
+      <ForecastSummaries
+        forecasts={validProps}
+        onForecastSelect={onForecastSelect}
+      />
     );
 
     expect(getAllByTestId("forecast-summary")).toHaveLength(2);
