@@ -1,19 +1,18 @@
 import React from "react";
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
-import App from "../components/App";
-import forecast from "../data/forecast.json";
+import { render } from "@testing-library/react";
+import App from "../../components/App";
+import forecast from "../../data/forecast.json";
 
 describe("App", () => {
   test("renders App component correctly", () => {
-    render(
+    const { asFragment } = render(
       <App
         location={forecast.location}
         forecasts={forecast.forecasts}
         forecast={forecast.forecasts[0]}
       />
     );
-    const h1Element = screen.getByText(/Manchester, UK/i);
-    expect(h1Element).toBeInTheDocument();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
