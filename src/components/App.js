@@ -14,9 +14,6 @@ function App() {
   const [searchText, setSearchText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const handleCitySearch = () => {
-    setTimeout(function () {
-      window.location.reload(1);
-    }, 3000);
     getForecast(
       searchText,
       setSelectedDate,
