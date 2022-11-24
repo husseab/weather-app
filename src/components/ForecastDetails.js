@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../styles/ForecastDetails.css";
+import "../styles/forecast-details.css";
 
 function ForecastDetails({ forecast }) {
   const { date, temperature, humidity, wind } = forecast;

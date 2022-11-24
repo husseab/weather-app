@@ -5,7 +5,7 @@ import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
 import getForecast from "./getForecast";
 import SearchForm from "./SearchForm";
-import "../styles/App.css";
+import "../styles/app.css";
 
 function App() {
   const [forecasts, setForecasts] = useState([]);
