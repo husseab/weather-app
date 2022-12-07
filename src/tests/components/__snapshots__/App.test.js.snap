@@ -5,17 +5,21 @@ exports[`App renders App component correctly 1`] = `
   <div
     class="weather-app"
   >
-    <h1>
+    <h1
+      class="location"
+    >
       ,  
     </h1>
     <div
       class="search-form"
     >
       <input
+        class="search-input"
         type="text"
         value=""
       />
       <button
+        class="search-button"
         type="submit"
       >
         Search
