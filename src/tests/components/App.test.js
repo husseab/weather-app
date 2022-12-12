@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
 import App from "../../components/App";
-import forecast from "../../data/forecast.json";
+import forecast from "../../mock-data/forecast.json";
 
 describe("App", () => {
   test("renders App component correctly", () => {
